@@ -1,0 +1,30 @@
+.principal_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f9fa; /* Fondo claro */
+}
+
+form {
+  width: 100%;
+  max-width: 500px; /* Ancho máximo del formulario */
+  padding: 20px;
+  border: 1px solid #dee2e6; /* Borde gris claro */
+  border-radius: 8px;
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.title {
+  text-align: center;
+  font-size: 35px;
+  color: #343a40;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+}

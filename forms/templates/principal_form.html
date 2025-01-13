@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'styles.css' %}" />
+  <title></title>
+</head>
+
+<body>
+  <div class="principal_div">
+    <h1 class="mb-3 mt-5 title">Formulario de Caracterización</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Nombre: </label>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="name"
+          placeholder="Ingrese su nombre" required>
+      </div>
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-3 pt-0">Tipo de documento: </legend>
+          <div class="col-sm-9">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="identification_type" id="ti">
+              <label class="form-check-label" for="gridRadios1">
+                T.I
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="identification_type" id="cc">
+              <label class="form-check-label" for="gridRadios2">
+                C.C
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="identification_type" id="pas">
+              <label class="form-check-label" for="gridRadios3">
+                Pasaporte
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="identification_type" id="ce">
+              <label class="form-check-label" for="gridRadios3">
+                C.E
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-group">
+        <label for="id_number">Número de documento: </label>
+        <input type="number" class="form-control" name="id_number" id="id_number" aria-describedby="id_number"
+          placeholder="Ingrese su número de documento" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Celular: </label>
+        <input type="number" name="phone" class="form-control" id="phone" aria-describedby="phone"
+          placeholder="Ingrese su número de celular" required>
+      </div>
+      <div class="form-group">
+        <label for="neighborhood">Barrio: </label>
+        <input type="text" name="neighborhood" class="form-control" id="neighborhood" aria-describedby="neighborhood"
+          placeholder="Ingrese su barrio">
+      </div>
+      <div class="form-group">
+        <label for="poblational_group">Grupo poblacional: </label>
+        <select id="poblational_group" name="poblational_group" class="form-control">
+          <option></option>
+          <option>LGBTIQ+</option>
+          <option>Afrocolombiano</option>
+          <option>Room</option>
+          <option>Indígena</option>
+          <option>Victima del conflicto armado</option>
+        </select>
+      </div>
+
+      <fieldset class="form-group">
+        <div class="row">
+          <legend class="col-form-label col-sm-3 pt-0">Género:</legend>
+          <div class="col-sm-9">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender_type" id="hombre">
+              <label class="form-check-label" for="gridRadios1">
+                Hombre
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender_type" id="mujer">
+              <label class="form-check-label" for="gridRadios2">
+                Mujer
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="gender_type" id="orto">
+              <label class="form-check-label" for="gridRadios3">
+                Otro
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <a href="{% url 'first_form' %}" class=" btn btn-secondary"">Volver</a>
+
+    </form>
+    <a></a>
+  </div>
+</body>
+
+</html>
